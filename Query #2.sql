@@ -53,3 +53,25 @@ WHERE
       FK_GroupName_ID="D4-2" 
 		         AND
 		Year(BirthDate)="2003";
+SELECT
+      PrieksmetaName,
+      TeorStunduSk+PrakStunduSk
+FROM prieksmeti;
+SELECT
+      MacibuPlani_ID,
+      Semestris,
+      TeorStunduSk+PrakStunduSk,
+      FK_Skolotaji_ID,
+      FK_GroupName_ID,
+      FK_Prieksmeta_ID
+FROM macibuplani
+WHERE FK_GroupName_ID="D4-1";
+SELECT
+      Vertejumi
+FROM diploma_vertejumi
+WHERE Vertejumi<4;
+SELECT
+      Vertejumi,
+      FK_PerKods_ID
+FROM diploma_vertejumi
+WHERE Vertejumi<4;
