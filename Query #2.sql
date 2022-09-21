@@ -72,6 +72,7 @@ FROM diploma_vertejumi
 WHERE Vertejumi<4;
 SELECT
       Vertejumi,
-      FK_PerKods_ID
+      FK_PerKods_ID,
+      FK_Prieksmeta_ID
 FROM diploma_vertejumi
 WHERE Vertejumi<4;
