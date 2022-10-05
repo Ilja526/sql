@@ -14,3 +14,16 @@ SELECT
      Surname,
      DATE_FORMAT(CURDATE(),"%y") AS "Gads"
 FROM skolotaji;
+SELECT
+     Name,
+     Surname,
+     YEAR(CURDATE())-DarbaStaze AS "Savus darba pienākumus"
+FROM skolotaji;
+SELECT
+     Name,
+     Surname,
+     BirthDate,
+DATE_FORMAT((BirthDate), "%d/%m/%Y") AS "DateFormat1",
+DATE_FORMAT((BirthDate), "%M %d, %y") AS "DateFormat2",
+DATE_FORMAT((BirthDate), "%d %b, %W") AS "DateFormat3"
+FROM audzekni;
