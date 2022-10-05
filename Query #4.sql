@@ -17,7 +17,7 @@ FROM skolotaji;
 SELECT
      Name,
      Surname,
-     YEAR(CURDATE())-DarbaStaze AS "Savus darba pienākumus"
+     YEAR(CURDATE())-DarbaStaze AS "Gads, kurā viņi sāka strādāt"
 FROM skolotaji;
 SELECT
      Name,
