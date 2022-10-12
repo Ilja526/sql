@@ -1,5 +1,5 @@
 SELECT
-		COUNT(FK_GroupName_ID) AS GroupName_ID
+      COUNT(FK_GroupName_ID) AS GroupName_ID
 FROM audzekni
 WHERE FK_GroupName_ID="D4-1";
 SELECT
