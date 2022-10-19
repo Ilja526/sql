@@ -4,7 +4,7 @@ FROM audzekni
 GROUP BY FK_GroupName_ID;
 SELECT
       COUNT(PerKods_ID) AS "Audzēkņu skaitu",
-		YEAR(BirthDate) AS "Gads"
+      YEAR(BirthDate) AS "Gads"
 FROM audzekni
 GROUP BY Gads;
 SELECT
