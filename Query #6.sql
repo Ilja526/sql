@@ -32,3 +32,8 @@ FROM diploma_vertejumi
 WHERE Vertejumi<4 | "n/v"
 GROUP BY FK_Prieksmeta_ID
 HAVING COUNT(Vertejumi)>2;
+SELECT
+      COUNT(Vertejumi) AS "Vidējo vērtējumu",FK_PerKods_ID
+FROM diploma_vertejumi
+WHERE Vertejumi="n/v"
+GROUP BY FK_PerKods_ID;
