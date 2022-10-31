@@ -15,7 +15,7 @@ SELECT
       macibuplani.TeorStunduSk+PrakStunduSk AS "Grupa novadīto stundu skaitlis"
 FROM skolotaji
 INNER JOIN macibuplani
-WHERE macibuplani.Semestris=1 AND macibuplani.FK_Prieksmeta_ID IN(1,2);
+WHERE macibuplani.Semestris=1 AND macibuplani.FK_Prieksmeta_ID IN(1,2,3,4);
 SELECT
       CONCAT(skolotaji.Name," ",skolotaji.Surname) AS "Skolotājs",
       macibuplani.TeorStunduSk+PrakStunduSk AS "Stundu skaits (kopā)"
@@ -63,14 +63,15 @@ SELECT
 FROM audzekni
 LEFT JOIN diploma_vertejumi ON audzekni.PerKods_ID=diploma_vertejumi.FK_PerKods_ID  
 WHERE diploma_vertejumi.Vertejumi="n/v";
-SELECT
-      COUNT(diploma_vertejumi.FK_PerKods_ID) AS "Audzekņa skaits"
+SELECT 
+      COUNT(diploma_vertejumi.FK_PerKods_ID) AS "Audzekņa skaits",FK_PerKods_ID
 FROM diploma_vertejumi
-WHERE diploma_vertejumi.Vertejumi="n/v";
+WHERE diploma_vertejumi.Vertejumi="n/v"
+GROUP BY FK_PerKods_ID;
 SELECT
-      macibuplani.FK_GroupName_ID AS "Grupas nosaukums",
-      specialitates.ProgName AS "Priekšmets",
-      macibuplani.TeorStunduSk+PrakStunduSk AS "Stundu skaits(P+Tr)"
+      grupas.GroupName_ID AS "Grupas nosaukums",
+      specialitates.ProgName AS "Specialitates",
+      prieksmeti.TeorStunduSk AS "Stundu skaits(P+Tr)"
 FROM macibuplani
-INNER JOIN specialitates
+INNER JOIN specialitates,grupas,prieksmeti
 WHERE macibuplani.Semestris=1;
