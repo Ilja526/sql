@@ -71,7 +71,7 @@ GROUP BY FK_PerKods_ID;
 SELECT
       grupas.GroupName_ID AS "Grupas nosaukums",
       specialitates.ProgName AS "Specialitates",
-      prieksmeti.TeorStunduSk AS "Stundu skaits(P+Tr)"
+      prieksmeti.TeorStunduSk+prieksmeti.PrakStunduSk AS "Stundu skaits(P+Tr)"
 FROM macibuplani
 INNER JOIN specialitates,grupas,prieksmeti
 WHERE macibuplani.Semestris=1;
